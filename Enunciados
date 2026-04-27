@@ -1,0 +1,75 @@
+ESTRUTURA DE DADOS  |  PROVA PARCIAL II
+Julia Egute de P. Machado  309092
+_______________________________________________________________
+
+Exercício 1 (Lista Duplamente Encadeada) -
+
+Uma empresa de manutenção predial realiza vistorias técnicas em condomínios após reformas. Durante a vistoria, o técnico percorre uma sequência de pontos que precisam ser avaliados, como elevador, garagem, corredores, hall, escada de emergência, casa de máquinas e áreas comuns.
+
+Cada ponto de vistoria deve possuir as seguintes informações:
+nome do local vistoriado;
+descrição da pendência encontrada;
+tempo estimado de correção, em minutos;
+nível de prioridade ( baixa, média ou alta ).
+
+Durante a execução da vistoria, o técnico utiliza um sistema em que existe sempre um ponto atual sendo analisado e a partir desse ponto, ele pode avançar para o próximo local da vistoria ou voltar para o local anterior, caso precise revisar alguma informação já registrada.
+
+Além disso, durante a vistoria, pode ser necessário inserir uma nova pendência logo após o ponto atual, pois o técnico pode encontrar um problema relacionado antes de continuar o roteiro. Também deve ser possível remover uma pendência já registrada, caso ela tenha sido cadastrada por engano ou resolvida durante a própria vistoria.
+
+Para representar esse roteiro, deve ser utilizada uma lista duplamente encadeada. A escolha dessa estrutura se justifica porque o sistema precisa manter uma posição atual no roteiro e permitir deslocamentos nos dois sentidos: para o ponto anterior e para o próximo ponto. Além disso, ao inserir ou remover uma pendência no meio da vistoria.
+
+Implemente um programa em Python que apresente um menu interativo e permita ao usuário realizar as seguintes operações:
+cadastrar uma nova pendência no final do roteiro;
+inserir uma nova pendência após o ponto atual;
+avançar para o próximo ponto de vistoria;
+voltar para o ponto de vistoria anterior;
+exibir o ponto atual;
+remover o ponto atual da vistoria;
+exibir todo o roteiro de vistoria;
+calcular o tempo total estimado para corrigir todas as pendências;
+informar quantas pendências possuem prioridade alta;
+encerrar o programa.
+
+Além das operações de inserção, remoção e exibição, o programa deve realizar processamento sobre os dados armazenados, produzindo como resultado o tempo total estimado de correção e a quantidade de pendências com prioridade alta.
+
+---
+
+Exercício 2 (Pilha) -
+
+Uma indústria metalúrgica, armazena bobinas de aço pesando várias toneladas em fossos de segurança, que são espaços estreitos usados para evitar acidentes por rolamento. Por causa da estrutura do galpão, a ponte rolante responsável por movimentar as bobinas só consegue acessar uma única extremidade do fosso.
+
+Por essa limitação física, as bobinas são posicionadas uma após a outra. Então a bobina colocada por último fica mais próxima da saída e deve ser retirada antes das outras. Caso seja necessário acessar uma bobina mais antiga, todas as bobinas colocadas depois dela precisam ser removidas primeiro.
+
+Dessa forma, o funcionamento do fosso segue naturalmente a regra LIFO ( Last In, First Out ), pois a última bobina inserida será a primeira a ser retirada!
+
+Desenvolva um sistema de gerenciamento desse fosso. O operador da ponte rolante deverá usar um menu interativo para registrar a entrada e saída das bobinas, respeitando a ordem física de retirada.
+
+Cada bobina deverá possuir:
+código de identificação;
+peso em toneladas;
+tempo estimado de movimentação em segundos.
+
+O programa deverá permitir:
+Guardar uma bobina no fosso: o usuário informa o código, o peso e o tempo de movimentação da bobina. A bobina é inserida no topo da pilha.
+Retirar uma bobina do fosso: o sistema remove e exibe a última bobina inserida. Caso o fosso esteja vazio, o sistema deve informar que não há bobinas para retirar.
+Consultar a próxima bobina a sair: o sistema mostra a bobina que está no topo da pilha, sem removê-la.
+Inspecionar o fosso: o sistema exibe o estado atual da pilha, mostrando as bobinas da base até o topo.
+Exibir resumo do fosso: o sistema mostra a quantidade de bobinas armazenadas, o peso total das bobinas ainda no fosso e o tempo total de movimentação das bobinas armazenadas.
+Sair do sistema.
+
+Para a implementação, utilize a classe deque da biblioteca collections, representando o fosso como uma pilha.
+
+---
+
+Exercício 3 (Fila) -
+Um laboratório de inovação da faculdade possui uma impressora 3D. Os alunos enviam arquivos para impressão, mas a impressora só consegue produzir uma peça por vez.
+
+Cada solicitação de impressão possui:
+nome do aluno;
+nome da peça;
+tempo estimado de impressão em minutos;
+custo do material utilizado.
+O sistema deve processar as solicitações na ordem de chegada. Assim, a primeira solicitação cadastrada deve ser a primeira a ser impressa.
+Por isso, a estrutura mais adequada é uma fila, pois os elementos devem ser processados seguindo o princípio FIFO ( First In, First Out ), ou seja, o primeiro que entra é o primeiro que sai. 
+O programa deve permitir cadastrar solicitações, imprimir a próxima peça, exibir o estado atual da fila e mostrar um resumo com o total de peças impressas, o tempo total gasto e o custo total do material.
+
